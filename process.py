@@ -1,4 +1,3 @@
-# This will scrap data from https://www.iau.edu.sa/ar/colleges/college-of-computer-science-and-information-technology/programs/bachelor-of-science-in-artificial-intelligence-0
 import requests
 from bs4 import BeautifulSoup
 import pandas as pd
@@ -8,9 +7,20 @@ import pandas as pd
 # URL
 base_url = 'https://www.iau.edu.sa/ar/colleges/college-of-computer-science-and-information-technology'
 
+'''
+To do 
+1- Fix the find_child_paths 
+2- Get details about each major DONE ---
+3- Get details about CCSIT college 
+4- Get details about Aramco's chair
 
 
-def get_course_details(url , saved_file_name='data.csv'):
+
+
+
+'''
+
+def get_course_study_plan(url , saved_file_name='data.csv'):
     # Send request
     response = requests.get(url)
 
@@ -50,4 +60,5 @@ for major in majors:
     # Find the index of 'programs' or the default to the last segment if 'programs' is not found
     index = parts.index('programs') + 1 if 'programs' in parts else -1
     major_name = parts[index] if index != -1 else parts[-1]
-    get_course_details(major, f'{major_name}.csv')
+    get_course_study_plan(major, f'{major_name}.csv')
+
