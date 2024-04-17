@@ -2,16 +2,15 @@ from openai import OpenAI
 
 from langchain.vectorstores.cassandra import Cassandra
 from langchain.indexes.vectorstore import VectorstoreIndexCreator
-from langchain.llms import OpenAI 
+from langchain.llms import OpenAI  
 from langchain_community.embeddings import OpenAIEmbeddings
 
 from cassandra.cluster import Cluster
 from cassandra.auth import PlainTextAuthProvider
 
 from datasets import load_dataset
-
+# you'll need to get your own opwnai key if you wanna help, I forgot to put these keys in a .ignore file :). If you actually wanna help, text me to send you this ASTRA_DB_SECURE_CONNECT_BUNDLE file so u can use it
 ASTRA_DB_SECURE_CONNECT_BUNDLE = "\\Users\\mmahf\\Desktop\\Coding\\Randoms\\AstraDB\\secure-connect-vectordb.zip"
-
 
 ASTRA_CLIENT_ID = "JjmPfnAKGnKAntDGZUbvPleM"
 ASTRA_CLIENT_SECRET = "epQnR.8p4QxMQ3hx8y29ZkNuDZ+k0HGEifLTeoYlxUdPpdWhK+CJ-d0iXB7nd0UwSZkpTZAepPY6pGd_uXPfRRLDq5kFBZ2g8hZAvYMTxofKU37cl63c5p25qhctL+NU"
